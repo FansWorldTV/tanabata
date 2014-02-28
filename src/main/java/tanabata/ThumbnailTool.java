@@ -25,6 +25,8 @@ class ThumbnailTool extends MediaToolAdapter
     /** {@inheritDoc} */
     
     boolean thumbGenerated = false;
+    String thumbName = "thumb";
+    String path = ".";
     long offsetTime = 0;
     
     public ThumbnailTool()
@@ -36,6 +38,13 @@ class ThumbnailTool extends MediaToolAdapter
     {
         super();
         offsetTime = offsetInMilliseconds;
+    }
+    
+    public ThumbnailTool(String clipName, String path)
+    {
+        super();
+        thumbName = clipName + "_thumb";
+        this.path = path;
     }
     
     public boolean isThumbnailGenerated() {
@@ -50,7 +59,7 @@ class ThumbnailTool extends MediaToolAdapter
       if (!thumbGenerated && (offsetTime <= 0 || (timeStamp >= (offsetTime / 1000 * Global.DEFAULT_PTS_PER_SECOND)))) {
           // dump to file
           BufferedImage image = event.getImage();
-          String outputFilename = "c:\\programas\\grabaciones\\thumb.jpg";
+          String outputFilename = this.path + this.thumbName + ".jpg";
           try {
               ImageIO.write(image, "jpg", new File(outputFilename));
           } catch (IOException ex) {
