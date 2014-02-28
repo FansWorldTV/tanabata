@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JTextArea;
 
 /**
@@ -22,7 +23,7 @@ class ClipCutter extends TextLoggingProcess {
         super(txtLog);
     }
     
-    void cut(final String path, final String clipName, final String from, final String to) {
+    void cut(final String path, final String clipName, final String from, final String to, final DefaultListModel list) {
         final JTextArea log = this.txtLog;
         new Thread() {
             @Override
@@ -64,6 +65,7 @@ class ClipCutter extends TextLoggingProcess {
                 }
                 System.out.println("Transcoded");
                 log.append("Success! Clip name: " + destPath + "\n");
+                list.addElement(destPath);
             }
         }.start();
     }

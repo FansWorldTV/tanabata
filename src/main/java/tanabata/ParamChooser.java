@@ -12,6 +12,8 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
@@ -32,6 +34,8 @@ public class ParamChooser extends javax.swing.JFrame {
         initComponents();
         this.lstClipsModel = new DefaultListModel();
         this.lstClips.setModel(this.lstClipsModel);
+        this.lstUploaderClipsModel = new DefaultListModel();
+        this.lstUploaderClips.setModel(this.lstUploaderClipsModel);
     }
 
     /**
@@ -84,6 +88,19 @@ public class ParamChooser extends javax.swing.JFrame {
         txtPath = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtClipLength = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        lstUploaderClips = new javax.swing.JList();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtUploaderLog = new javax.swing.JTextArea();
+        btnUploaderYoutube = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        txtUploaderTitle = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txtUploaderDescription = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
+        txtUploaderTags = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tanabata");
@@ -258,7 +275,7 @@ public class ParamChooser extends javax.swing.JFrame {
                         .addComponent(txtToMinute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtToSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnClip))
-                    .addContainerGap(43, Short.MAX_VALUE))
+                    .addContainerGap(119, Short.MAX_VALUE))
             );
 
             jTabbedPane1.addTab("Clipper", jPanel2);
@@ -346,7 +363,7 @@ public class ParamChooser extends javax.swing.JFrame {
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(33, Short.MAX_VALUE)
+                    .addContainerGap(109, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(txtSearchTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -374,6 +391,79 @@ public class ParamChooser extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Shuffler", jPanel1);
 
+            jScrollPane3.setViewportView(lstUploaderClips);
+
+            txtUploaderLog.setColumns(20);
+            txtUploaderLog.setRows(5);
+            jScrollPane4.setViewportView(txtUploaderLog);
+
+            btnUploaderYoutube.setText("Youtube");
+            btnUploaderYoutube.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnUploaderYoutubeActionPerformed(evt);
+                }
+            });
+
+            jLabel11.setText("Title");
+
+            jLabel12.setText("Description");
+
+            txtUploaderDescription.setColumns(20);
+            txtUploaderDescription.setRows(5);
+            jScrollPane5.setViewportView(txtUploaderDescription);
+
+            jLabel13.setText("Tags (a,b)");
+
+            javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+            jPanel3.setLayout(jPanel3Layout);
+            jPanel3Layout.setHorizontalGroup(
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane4)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(btnUploaderYoutube)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel13))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtUploaderTags)
+                                .addComponent(txtUploaderTitle)
+                                .addComponent(jScrollPane5))))
+                    .addContainerGap())
+            );
+            jPanel3Layout.setVerticalGroup(
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(txtUploaderTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel12)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel13)
+                        .addComponent(txtUploaderTags, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnUploaderYoutube)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap())
+            );
+
+            jTabbedPane1.addTab("Uploader", jPanel3);
+
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
             layout.setHorizontalGroup(
@@ -382,9 +472,7 @@ public class ParamChooser extends javax.swing.JFrame {
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
             );
 
             pack();
@@ -466,7 +554,7 @@ public class ParamChooser extends javax.swing.JFrame {
         String path = this.txtPathClips.getText();
         
         ClipCutter cc = new ClipCutter(this.txtClipLog);
-        cc.cut(path, clipName, from, to);
+        cc.cut(path, clipName, from, to, this.lstUploaderClipsModel);
     }//GEN-LAST:event_btnClipActionPerformed
 
     private void btnRecordStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordStopActionPerformed
@@ -508,6 +596,19 @@ public class ParamChooser extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnRecordNextActionPerformed
 
+    private void btnUploaderYoutubeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploaderYoutubeActionPerformed
+        // TODO add your handling code here:
+        String title = this.txtUploaderTitle.getText();
+        String description = this.txtUploaderDescription.getText();
+        String[] tx = this.txtUploaderTags.getText().split(",");
+        List<String> tags = new ArrayList<>();
+        tags.addAll(Arrays.asList(tx));
+        
+        String filepath = this.lstUploaderClips.getSelectedValue().toString();
+        
+        YoutubeUpload.upload(filepath, title, description, tags, this.txtUploaderLog);
+    }//GEN-LAST:event_btnUploaderYoutubeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -544,6 +645,7 @@ public class ParamChooser extends javax.swing.JFrame {
     }
 
     private DefaultListModel lstClipsModel;
+    private DefaultListModel lstUploaderClipsModel;
     private StreamRecorder recordThread;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClip;
@@ -553,8 +655,12 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JButton btnRecordNext;
     private javax.swing.JButton btnRecordStop;
     private javax.swing.JButton btnShuffle;
+    private javax.swing.JButton btnUploaderYoutube;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -565,11 +671,16 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblThumb;
     private javax.swing.JList lstClips;
+    private javax.swing.JList lstUploaderClips;
     private javax.swing.JScrollPane scrollpane;
     private javax.swing.JTextField txtClipLength;
     private javax.swing.JTextField txtClipLimit;
@@ -587,5 +698,9 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JTextField txtToHour;
     private javax.swing.JTextField txtToMinute;
     private javax.swing.JTextField txtToSecond;
+    private javax.swing.JTextArea txtUploaderDescription;
+    private javax.swing.JTextArea txtUploaderLog;
+    private javax.swing.JTextField txtUploaderTags;
+    private javax.swing.JTextField txtUploaderTitle;
     // End of variables declaration//GEN-END:variables
 }
