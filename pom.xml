@@ -105,5 +105,10 @@
       <artifactId>google-oauth-client-jetty</artifactId>
       <version>1.17.0-rc</version>
     </dependency>
+    <dependency>
+      <groupId>org.twitter4j</groupId>
+      <artifactId>twitter4j-core</artifactId>
+      <version>3.0.5</version>
+    </dependency>
   </dependencies>
 </project>

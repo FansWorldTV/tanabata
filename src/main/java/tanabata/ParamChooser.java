@@ -6,18 +6,15 @@
 
 package tanabata;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javax.imageio.ImageIO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
 
 /**
  *
@@ -26,6 +23,7 @@ import javax.swing.ImageIcon;
 public class ParamChooser extends javax.swing.JFrame {
 
     public Integer clipNumber = 1;
+    public Twitter twitter = new TwitterFactory().getInstance();
     
     /**
      * Creates new form ParamChooser
@@ -36,6 +34,12 @@ public class ParamChooser extends javax.swing.JFrame {
         this.lstClips.setModel(this.lstClipsModel);
         this.lstUploaderClipsModel = new DefaultListModel();
         this.lstUploaderClips.setModel(this.lstUploaderClipsModel);
+        this.lstSharerLinksModel = new DefaultListModel();
+        this.lstSharerLinks.setModel(this.lstSharerLinksModel);
+        
+        String consumerKey = "z4tD7RW6JvmHg1iQ91hdSw";
+        String consumerSecret = "TsCQQR7OJveTYg9lYQIxU8psMVrCwyQC3mtphsM";
+        this.twitter.setOAuthConsumer(consumerKey, consumerSecret);
     }
 
     /**
@@ -101,6 +105,16 @@ public class ParamChooser extends javax.swing.JFrame {
         txtUploaderDescription = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         txtUploaderTags = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txtSharerText = new javax.swing.JTextArea();
+        btnSharerTwitter = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        lstSharerLinks = new javax.swing.JList();
+        btnSharerCopyLink = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txtSharerLog = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tanabata");
@@ -391,13 +405,14 @@ public class ParamChooser extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Shuffler", jPanel1);
 
+            lstUploaderClips.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
             jScrollPane3.setViewportView(lstUploaderClips);
 
             txtUploaderLog.setColumns(20);
             txtUploaderLog.setRows(5);
             jScrollPane4.setViewportView(txtUploaderLog);
 
-            btnUploaderYoutube.setText("Youtube");
+            btnUploaderYoutube.setText("Upload to Youtube");
             btnUploaderYoutube.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btnUploaderYoutubeActionPerformed(evt);
@@ -463,6 +478,71 @@ public class ParamChooser extends javax.swing.JFrame {
             );
 
             jTabbedPane1.addTab("Uploader", jPanel3);
+
+            jLabel14.setText("Text");
+
+            txtSharerText.setColumns(20);
+            txtSharerText.setRows(5);
+            jScrollPane6.setViewportView(txtSharerText);
+
+            btnSharerTwitter.setText("Share to Twitter");
+            btnSharerTwitter.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnSharerTwitterActionPerformed(evt);
+                }
+            });
+
+            lstSharerLinks.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+            jScrollPane7.setViewportView(lstSharerLinks);
+
+            btnSharerCopyLink.setText("Copy link into text");
+            btnSharerCopyLink.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnSharerCopyLinkActionPerformed(evt);
+                }
+            });
+
+            txtSharerLog.setColumns(20);
+            txtSharerLog.setRows(5);
+            jScrollPane8.setViewportView(txtSharerLog);
+
+            javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+            jPanel4.setLayout(jPanel4Layout);
+            jPanel4Layout.setHorizontalGroup(
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane8)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnSharerTwitter)
+                                .addComponent(jLabel14)
+                                .addComponent(btnSharerCopyLink))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap())
+            );
+            jPanel4Layout.setVerticalGroup(
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnSharerCopyLink)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel14)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnSharerTwitter)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+
+            jTabbedPane1.addTab("Sharer", jPanel4);
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -606,8 +686,27 @@ public class ParamChooser extends javax.swing.JFrame {
         
         String filepath = this.lstUploaderClips.getSelectedValue().toString();
         
-        YoutubeUpload.upload(filepath, title, description, tags, this.txtUploaderLog);
+        YoutubeUpload.upload(filepath, title, description, tags, this.txtUploaderLog, this.lstSharerLinksModel);
     }//GEN-LAST:event_btnUploaderYoutubeActionPerformed
+
+    private void btnSharerTwitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSharerTwitterActionPerformed
+        try {
+            // TODO add your handling code here:
+            String text = this.txtSharerText.getText();
+            
+            if (this.twitter.getOAuthAccessToken() != null) {
+                TwitterShare.share(text, this.twitter, this.txtSharerLog);
+            }
+        } catch (Exception ex) {
+            TwitterShare.auth(this.twitter);
+        }
+    }//GEN-LAST:event_btnSharerTwitterActionPerformed
+
+    private void btnSharerCopyLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSharerCopyLinkActionPerformed
+        // TODO add your handling code here:
+        String selected = this.lstSharerLinks.getSelectedValue().toString();
+        this.txtSharerText.append(selected);
+    }//GEN-LAST:event_btnSharerCopyLinkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -646,6 +745,7 @@ public class ParamChooser extends javax.swing.JFrame {
 
     private DefaultListModel lstClipsModel;
     private DefaultListModel lstUploaderClipsModel;
+    private DefaultListModel lstSharerLinksModel;
     private StreamRecorder recordThread;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClip;
@@ -654,6 +754,8 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JButton btnPlayVideo;
     private javax.swing.JButton btnRecordNext;
     private javax.swing.JButton btnRecordStop;
+    private javax.swing.JButton btnSharerCopyLink;
+    private javax.swing.JButton btnSharerTwitter;
     private javax.swing.JButton btnShuffle;
     private javax.swing.JButton btnUploaderYoutube;
     private javax.swing.JLabel jLabel1;
@@ -661,6 +763,7 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -672,14 +775,19 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblThumb;
     private javax.swing.JList lstClips;
+    private javax.swing.JList lstSharerLinks;
     private javax.swing.JList lstUploaderClips;
     private javax.swing.JScrollPane scrollpane;
     private javax.swing.JTextField txtClipLength;
@@ -694,6 +802,8 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JTextField txtPathClips;
     private javax.swing.JTextField txtPercentage1;
     private javax.swing.JTextField txtSearchTerm;
+    private javax.swing.JTextArea txtSharerLog;
+    private javax.swing.JTextArea txtSharerText;
     private javax.swing.JTextField txtStream;
     private javax.swing.JTextField txtToHour;
     private javax.swing.JTextField txtToMinute;
