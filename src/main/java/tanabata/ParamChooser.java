@@ -115,6 +115,7 @@ public class ParamChooser extends javax.swing.JFrame {
         btnSharerCopyLink = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         txtSharerLog = new javax.swing.JTextArea();
+        btnSharerFacebook = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tanabata");
@@ -506,6 +507,13 @@ public class ParamChooser extends javax.swing.JFrame {
             txtSharerLog.setRows(5);
             jScrollPane8.setViewportView(txtSharerLog);
 
+            btnSharerFacebook.setText("Share to Facebook (url only)");
+            btnSharerFacebook.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnSharerFacebookActionPerformed(evt);
+                }
+            });
+
             javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
             jPanel4.setLayout(jPanel4Layout);
             jPanel4Layout.setHorizontalGroup(
@@ -517,10 +525,13 @@ public class ParamChooser extends javax.swing.JFrame {
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnSharerTwitter)
-                                .addComponent(jLabel14)
-                                .addComponent(btnSharerCopyLink))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnSharerCopyLink, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addComponent(btnSharerTwitter)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnSharerFacebook)))
                             .addGap(0, 0, Short.MAX_VALUE)))
                     .addContainerGap())
             );
@@ -536,7 +547,9 @@ public class ParamChooser extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(btnSharerTwitter)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnSharerTwitter)
+                        .addComponent(btnSharerFacebook))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addContainerGap())
@@ -708,6 +721,12 @@ public class ParamChooser extends javax.swing.JFrame {
         this.txtSharerText.append(selected);
     }//GEN-LAST:event_btnSharerCopyLinkActionPerformed
 
+    private void btnSharerFacebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSharerFacebookActionPerformed
+        // TODO add your handling code here:
+        String text = this.txtSharerText.getText();
+        FacebookShare.share(text, this.txtSharerLog);
+    }//GEN-LAST:event_btnSharerFacebookActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -755,6 +774,7 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JButton btnRecordNext;
     private javax.swing.JButton btnRecordStop;
     private javax.swing.JButton btnSharerCopyLink;
+    private javax.swing.JButton btnSharerFacebook;
     private javax.swing.JButton btnSharerTwitter;
     private javax.swing.JButton btnShuffle;
     private javax.swing.JButton btnUploaderYoutube;
