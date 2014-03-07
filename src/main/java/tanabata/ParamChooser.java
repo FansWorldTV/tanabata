@@ -105,6 +105,7 @@ public class ParamChooser extends javax.swing.JFrame {
         txtUploaderDescription = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         txtUploaderTags = new javax.swing.JTextField();
+        btnUploaderResetYoutubeCredentials = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -430,6 +431,13 @@ public class ParamChooser extends javax.swing.JFrame {
 
             jLabel13.setText("Tags (a,b)");
 
+            btnUploaderResetYoutubeCredentials.setText("Reset YT Credentials");
+            btnUploaderResetYoutubeCredentials.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnUploaderResetYoutubeCredentialsActionPerformed(evt);
+                }
+            });
+
             javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
             jPanel3.setLayout(jPanel3Layout);
             jPanel3Layout.setHorizontalGroup(
@@ -441,6 +449,8 @@ public class ParamChooser extends javax.swing.JFrame {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(btnUploaderYoutube)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnUploaderResetYoutubeCredentials)
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,7 +482,9 @@ public class ParamChooser extends javax.swing.JFrame {
                         .addComponent(jLabel13)
                         .addComponent(txtUploaderTags, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(btnUploaderYoutube)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnUploaderYoutube)
+                        .addComponent(btnUploaderResetYoutubeCredentials))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap())
@@ -727,6 +739,15 @@ public class ParamChooser extends javax.swing.JFrame {
         FacebookShare.share(text, this.txtSharerLog);
     }//GEN-LAST:event_btnSharerFacebookActionPerformed
 
+    private void btnUploaderResetYoutubeCredentialsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploaderResetYoutubeCredentialsActionPerformed
+        // TODO add your handling code here:
+        if (Auth.revoke("uploadvideo")) {
+            this.txtUploaderLog.append("Youtube upload credentials reset" + "\n");
+        } else {
+            this.txtUploaderLog.append("Reset credentials failed" + "\n");
+        }
+    }//GEN-LAST:event_btnUploaderResetYoutubeCredentialsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -777,6 +798,7 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JButton btnSharerFacebook;
     private javax.swing.JButton btnSharerTwitter;
     private javax.swing.JButton btnShuffle;
+    private javax.swing.JButton btnUploaderResetYoutubeCredentials;
     private javax.swing.JButton btnUploaderYoutube;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -74,4 +74,10 @@ public class Auth {
         // Authorize.
         return new AuthorizationCodeInstalledApp(flow, localReceiver).authorize("user");
     }
+    
+    public static boolean revoke(String credentialDatastore) {
+        File credfile = new File(System.getProperty("user.home") + "/" + CREDENTIALS_DIRECTORY + "/" + credentialDatastore);
+        if (credfile.exists()) return credfile.delete();
+        return false;
+    }
 }
