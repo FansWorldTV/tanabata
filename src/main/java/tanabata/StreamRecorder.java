@@ -56,7 +56,7 @@ class StreamRecorder extends Thread {
         String clipName = "record" + clipNumber;
         String clipPath = path + clipName + ".flv";
         
-        String[] commands = {"ffmpeg", "-y", "-i", rtmp,
+        String[] commands = {path + "ffmpeg", "-y", "-i", rtmp,
             "-ar", "44100", "-b:v", "4000k", "-qmax", "10",
             clipPath};
         ProcessBuilder pb = new ProcessBuilder(commands);

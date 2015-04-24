@@ -37,7 +37,7 @@ public class ClipDownloader extends TextLoggingProcess {
                 String startstr = this.getDurationString(startpoint);
                 String lenstr = this.getDurationString(length);
                 
-                String[] commands = {"ffmpeg", "-i", video.getStream(), 
+                String[] commands = {path + "ffmpeg", "-i", video.getStream(), 
                 "-ss", startstr, "-t", lenstr,
                 "-codec:v", "libx264", "-profile:v", "high", "-preset", "veryfast", "-b:v", "2000k", "-maxrate", "2000k",
                 "-bufsize", "4000k", "-vf", "scale=1280:720", "-threads", "0", "-codec:a", "mp3", "-b:a", "128k",

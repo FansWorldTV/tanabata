@@ -76,22 +76,6 @@ public class ParamChooser extends javax.swing.JFrame {
         txtClipLog = new javax.swing.JTextArea();
         btnPlaySelected = new javax.swing.JButton();
         btnRecordNext = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        scrollpane = new javax.swing.JScrollPane();
-        txtLog = new javax.swing.JTextArea();
-        jLabel6 = new javax.swing.JLabel();
-        txtClipLimit = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        txtPercentage1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        btnShuffle = new javax.swing.JButton();
-        txtMaxDuration = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtSearchTerm = new javax.swing.JTextField();
-        txtPath = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtClipLength = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         lstUploaderClips = new javax.swing.JList();
@@ -117,6 +101,32 @@ public class ParamChooser extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         txtSharerLog = new javax.swing.JTextArea();
         btnSharerFacebook = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        scrollpane = new javax.swing.JScrollPane();
+        txtLog = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        txtClipLimit = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtPercentage1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        btnShuffle = new javax.swing.JButton();
+        txtMaxDuration = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtSearchTerm = new javax.swing.JTextField();
+        txtPath = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtClipLength = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        txtCommentSearch = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtCommentVideoLimit = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtCommentCommentLimit = new javax.swing.JTextField();
+        btnCommentGo = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        txtCommentLog = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tanabata");
@@ -296,117 +306,6 @@ public class ParamChooser extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Clipper", jPanel2);
 
-            txtLog.setColumns(20);
-            txtLog.setRows(5);
-            scrollpane.setViewportView(txtLog);
-
-            jLabel6.setText("Path");
-
-            txtClipLimit.setText("10");
-            txtClipLimit.setToolTipText("");
-            txtClipLimit.setMinimumSize(new java.awt.Dimension(100, 20));
-
-            jLabel5.setText("Max duration");
-
-            jLabel1.setText("Search term");
-
-            txtPercentage1.setText("50");
-            txtPercentage1.setToolTipText("");
-            txtPercentage1.setMinimumSize(new java.awt.Dimension(100, 20));
-
-            jLabel3.setText("Clip length");
-
-            btnShuffle.setText("Shuffle!");
-            btnShuffle.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnShuffleActionPerformed(evt);
-                }
-            });
-
-            txtMaxDuration.setText("400");
-
-            jLabel2.setText("Percentage");
-
-            txtSearchTerm.setText("science");
-            txtSearchTerm.setToolTipText("");
-            txtSearchTerm.setMinimumSize(new java.awt.Dimension(100, 20));
-
-            txtPath.setText("c:\\programas\\grabaciones");
-
-            jLabel4.setText("Clip limit");
-
-            txtClipLength.setText("5");
-            txtClipLength.setToolTipText("");
-            txtClipLength.setMinimumSize(new java.awt.Dimension(100, 20));
-
-            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-            jPanel1.setLayout(jPanel1Layout);
-            jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(scrollpane)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(txtClipLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnShuffle))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(txtSearchTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel5))
-                                        .addComponent(txtClipLength, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(txtPercentage1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel6)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtMaxDuration)
-                                        .addComponent(txtPath, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))))))
-                    .addContainerGap())
-            );
-            jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(109, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(txtSearchTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)
-                        .addComponent(txtMaxDuration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(11, 11, 11)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(txtPercentage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(txtClipLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(txtClipLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnShuffle))
-                    .addGap(18, 18, 18)
-                    .addComponent(scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap())
-            );
-
-            jTabbedPane1.addTab("Shuffler", jPanel1);
-
             lstUploaderClips.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
             jScrollPane3.setViewportView(lstUploaderClips);
 
@@ -568,6 +467,183 @@ public class ParamChooser extends javax.swing.JFrame {
             );
 
             jTabbedPane1.addTab("Sharer", jPanel4);
+
+            txtLog.setColumns(20);
+            txtLog.setRows(5);
+            scrollpane.setViewportView(txtLog);
+
+            jLabel6.setText("Path");
+
+            txtClipLimit.setText("10");
+            txtClipLimit.setToolTipText("");
+            txtClipLimit.setMinimumSize(new java.awt.Dimension(100, 20));
+
+            jLabel5.setText("Max duration");
+
+            jLabel1.setText("Search term");
+
+            txtPercentage1.setText("50");
+            txtPercentage1.setToolTipText("");
+            txtPercentage1.setMinimumSize(new java.awt.Dimension(100, 20));
+
+            jLabel3.setText("Clip length");
+
+            btnShuffle.setText("Shuffle!");
+            btnShuffle.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnShuffleActionPerformed(evt);
+                }
+            });
+
+            txtMaxDuration.setText("400");
+
+            jLabel2.setText("Percentage");
+
+            txtSearchTerm.setText("science");
+            txtSearchTerm.setToolTipText("");
+            txtSearchTerm.setMinimumSize(new java.awt.Dimension(100, 20));
+
+            txtPath.setText("c:\\programas\\grabaciones");
+
+            jLabel4.setText("Clip limit");
+
+            txtClipLength.setText("5");
+            txtClipLength.setToolTipText("");
+            txtClipLength.setMinimumSize(new java.awt.Dimension(100, 20));
+
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(scrollpane)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(txtClipLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnShuffle))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(txtSearchTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel5))
+                                        .addComponent(txtClipLength, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(txtPercentage1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel6)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtMaxDuration)
+                                        .addComponent(txtPath, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))))))
+                    .addContainerGap())
+            );
+            jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(109, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(txtSearchTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addComponent(txtMaxDuration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(11, 11, 11)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtPercentage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6)
+                        .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(txtClipLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(txtClipLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnShuffle))
+                    .addGap(18, 18, 18)
+                    .addComponent(scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap())
+            );
+
+            jTabbedPane1.addTab("Shuffler", jPanel1);
+
+            jLabel15.setText("Search");
+
+            txtCommentSearch.setText("miley cyrus");
+
+            jLabel16.setText("Videos #");
+
+            txtCommentVideoLimit.setText("5");
+
+            jLabel17.setText("Comments #");
+
+            txtCommentCommentLimit.setText("5");
+
+            btnCommentGo.setText("Go");
+            btnCommentGo.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnCommentGoActionPerformed(evt);
+                }
+            });
+
+            txtCommentLog.setColumns(20);
+            txtCommentLog.setRows(5);
+            jScrollPane9.setViewportView(txtCommentLog);
+
+            javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+            jPanel5.setLayout(jPanel5Layout);
+            jPanel5Layout.setHorizontalGroup(
+                jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane9)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(jLabel15)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtCommentSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel16)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtCommentVideoLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtCommentCommentLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                            .addComponent(btnCommentGo)))
+                    .addContainerGap())
+            );
+            jPanel5Layout.setVerticalGroup(
+                jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15)
+                        .addComponent(txtCommentSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16)
+                        .addComponent(txtCommentVideoLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel17)
+                        .addComponent(txtCommentCommentLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCommentGo))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+
+            jTabbedPane1.addTab("Commentfind", jPanel5);
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -748,6 +824,16 @@ public class ParamChooser extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnUploaderResetYoutubeCredentialsActionPerformed
 
+    private void btnCommentGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommentGoActionPerformed
+        // TODO add your handling code here:
+        String search = this.txtCommentSearch.getText();
+        Integer videolimit = Integer.parseInt(this.txtCommentVideoLimit.getText());
+        Integer commentlimit = Integer.parseInt(this.txtCommentCommentLimit.getText());
+        
+        YoutubeCommentFinder ycf = new YoutubeCommentFinder();
+        ycf.find(search, videolimit, commentlimit, this.txtCommentLog);
+    }//GEN-LAST:event_btnCommentGoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -790,6 +876,7 @@ public class ParamChooser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClip;
     private javax.swing.JButton btnClip;
+    private javax.swing.JButton btnCommentGo;
     private javax.swing.JButton btnPlaySelected;
     private javax.swing.JButton btnPlayVideo;
     private javax.swing.JButton btnRecordNext;
@@ -806,6 +893,9 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -818,6 +908,7 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -826,6 +917,7 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblThumb;
     private javax.swing.JList lstClips;
@@ -835,6 +927,10 @@ public class ParamChooser extends javax.swing.JFrame {
     private javax.swing.JTextField txtClipLength;
     private javax.swing.JTextField txtClipLimit;
     private javax.swing.JTextArea txtClipLog;
+    private javax.swing.JTextField txtCommentCommentLimit;
+    private javax.swing.JTextArea txtCommentLog;
+    private javax.swing.JTextField txtCommentSearch;
+    private javax.swing.JTextField txtCommentVideoLimit;
     private javax.swing.JTextField txtFromHour;
     private javax.swing.JTextField txtFromMinute;
     private javax.swing.JTextField txtFromSecond;

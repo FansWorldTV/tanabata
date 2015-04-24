@@ -37,7 +37,7 @@ class ClipCutter extends TextLoggingProcess {
                 
                 log.append("Clipping " + clipName + " from " + from + " to " + to + "..." + "\n");
                 
-                String[] commands = {"ffmpeg", "-i", sourcePath,
+                String[] commands = {path + "ffmpeg", "-i", sourcePath,
                     "-ss", from, "-to", to, "-c", "copy", "-y",
                     //"-codec:v", "libx264", "-profile:v", "high", "-preset", "veryfast", "-b:v", "2000k",
                     //"-maxrate", "2000k", "-bufsize", "4000k", "-vf", "scale=-1:720", "-codec:a", "mp3",

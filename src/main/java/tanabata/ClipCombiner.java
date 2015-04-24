@@ -45,7 +45,7 @@ public class ClipCombiner extends TextLoggingProcess {
             this.log("Starting combination");
             Date date = new Date();
             
-            String[] commands = {"ffmpeg", "-f", "concat", "-i", "mylist.txt",
+            String[] commands = {path + "ffmpeg", "-f", "concat", "-i", "mylist.txt",
             "-codec:v", "libx264", "-profile:v", "high", "-preset", "veryfast", "-b:v", "2000k", "-maxrate", "2000k",
             "-bufsize", "4000k", "-vf", "scale=1280:720", "-threads", "0", "-codec:a", "mp3", "-b:a", "128k",
             "-r", "25", "-ar", "48k", "combined-" + date.getTime() + ".mp4"};
